@@ -1,0 +1,15 @@
+{% for label, flashes in app.session.flashbag.all %}
+    {% for flash in flashes %}
+        {% if (label=='guncelle') %}
+            <script>swal("Update Successful", "", "success");</script> {{ flash }}
+        {% elseif(label == 'ekle') %}
+            <script>swal("Adding Successful", "", "success");</script> {{ flash }}
+        {% elseif(label == 'sil') %}
+            <script>swal("Deletion Successful", "", "info");</script> {{ flash }}
+        {% elseif(label == 'warning') %}
+            <div class="alert alert-danger">
+                <strong>ERROR!</strong> {{ flash }}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endfor %}

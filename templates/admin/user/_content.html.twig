@@ -1,0 +1,44 @@
+<h2>Members</h2>
+<br>
+{{ include('admin/messages.html.twig') }}
+<a href="{{ path("admin_user_insert") }}" class="btn btn-info btn-md btn-block"> <span
+            class="glyphicon glyphicon-plus"></span> Add Member</a>
+<br> <br>
+<div style="overflow-x:auto;">
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Id</th>
+        <th>Name surname</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Telephone</th>
+        <th>Adress</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>City</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {% for x in Users %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.name }}</td>
+            <td>{{ x.email }}</td>
+            <td>{{ x.password }}</td>
+            <td>{{ x.tel }}</td>
+            <td>{{ x.addres }}</td>
+            <td>{{ x.type }}</td>
+            <td>{{ x.status }}</td>
+            <td>{{ x.city }}</td>
+            <td><a href="{{ path('admin_user_update',{'id':x.id}) }}" class="btn btn-block btn-primary btn-xs"><span
+                            class="glyphicon glyphicon-pencil"></span> &nbsp; &nbsp; Edit</a></td>
+            <td><a href="{{ path('admin_user_delete',{'id':x.id}) }}"
+                   onclick="return confirm('Are you sure to delete?')"
+                   class="btn btn-block btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;
+                    Delete</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>

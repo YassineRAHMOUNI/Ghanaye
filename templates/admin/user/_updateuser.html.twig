@@ -1,0 +1,55 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block content %}
+    <h2>Update Member</h2>
+    <br>
+    <form method="post">
+        <div class="form-group col-md-6">
+            <label for="exampleInputEmail1">Email Adress</label>
+            <input type="email" class="form-control" name="users[email]" value="{{ user.email }}" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="text" readonly class="form-control" name="users[password]" value="{{ user.password }}"
+                   placeholder="password">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Full Name</label>
+            <input type="text" class="form-control" name="users[name]" value="{{ user.name }}" placeholder="Full Name">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Telephone</label>
+            <input type="text" class="form-control" name="users[tel]" value="{{ user.tel }}" placeholder="Telephone">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="exampleInputPassword1">Adress</label>
+            <input type="text" class="form-control" name="users[addres]" value="{{ user.addres }}" placeholder="Adress">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Type</label>
+            <select name="users[type]" class="form-control">
+                <option>{{ user.type }}</option>
+                <option>Admin</option>
+                <option>Member</option>
+                <option>Accountant</option>
+                <option>Courier</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Durum</label>
+            <select name="users[status]" class="form-control">
+                <option>{{ user.status }}</option>
+                <option>True</option>
+                <option>False</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">City</label>
+            <input type="text" class="form-control" name="users[city]" value="{{ user.city }}" placeholder="City">
+        </div>
+        <div class=" col-md-6">
+            <br>
+            <button type="submit" class="btn btn-primary col-md-12">Update</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+<div class="col-md-12">
+    <form method="post">
+        <div class="form-group col-md-6 ">
+        <br>
+            <label>Name </label>
+            <input type="text" class="form-control" name="region[name]" value="{{ region.name }}"
+                   placeholder="Region Name">
+        </div>
+
+        <div class="row col-md-12">
+            <div class="col-md-6 form-group">
+                <a href="{{ path('admin_region_index') }}" class="btn btn-primary btn-block"><span
+                            class="glyphicon glyphicon-arrow-left"> </span> Back to List</a>
+            </div>
+            <div class="col-md-6 form-group">
+                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-check"></span>
+                    Save
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>

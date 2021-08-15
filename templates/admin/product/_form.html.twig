@@ -1,0 +1,121 @@
+<div class="col-md-12">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group col-md-4 ">
+            <label>Category</label>
+            <select name="product[category_id]" class="form-control">
+                {% if(catname) %}
+                <option value="{{ product.categoryid }} ">{{ catname[0].title }}</option>
+                {% endif %}
+
+                {% for cat in catlist %}
+                    <option value="{{ cat.id }}">{{ cat.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-md-4 ">
+            <label>Regions</label>
+            <select name="product[region_id]" class="form-control">
+                {% for r in regionList %}
+                    <option value="{{ r.id }}">{{ r.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-md-4 ">
+            <label>Title</label>
+            <input type="text" class="form-control" name="product[title]" value="{{ product.title }}"
+                   placeholder="Title">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>Keywords </label>
+            <input type="text" class="form-control" name="product[keywords]" value="{{ product.keywords }}"
+                   placeholder="Keywords ">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>Type </label>
+            <input type="text" class="form-control" name="product[type]" value="{{ product.type }}"
+                   placeholder="Type">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>Publisher ID</label>
+            <input type="number" class="form-control" name="product[publisher_id]" value="{{ product.publisherid }}"
+                   placeholder="Publisher ID">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>Year</label>
+            <input type="number" class="form-control" name="product[year]" value="{{ product.year }}"
+                   placeholder="Year(Yıl)">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>Amount</label>
+            <input type="number" class="form-control" name="product[amount]" value="{{ product.amount }}"
+                   placeholder="Amount">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>Purchase price</label>
+            <input type="number" class="form-control" name="product[pprice]" value="{{ product.pprice }}"
+                   placeholder="PPrice">
+        </div>
+        <div class="form-group  col-md-6">
+            <label>Sale price</label>
+            <input type="number" class="form-control" name="product[sprice]" value="{{ product.sprice }}"
+                   placeholder="SPrice">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>Minamount</label>
+            <input type="number" class="form-control" name="product[minamout]" value="{{ product.minamout }}"
+                   placeholder="Minamount">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>Description</label>
+            <input type="text" class="form-control" name="product[description]" value="{{ product.description }}"
+                   placeholder="Description">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label>User ID</label>
+            <input type="number" class="form-control" name="product[user_id]" value="{{ product.userid }}"
+                   placeholder="User ID">
+        </div>
+        <div class="form-group col-md-4">
+            <label> Status</label>
+            <select name="product[status]" class="form-control">
+                <option>{{ product.status }}</option>
+                <option>True</option>
+                <option>False</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Brand</label>
+            <input type="text" class="form-control" name="product[brand]" value="{{ product.brand }}"
+                   placeholder="Product brand">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Image</label>
+            <input type="file" class="form-control" name="image">
+        </div>
+
+        <div class="form-group col-md-12 ">
+            <label>Detail</label>
+            <textarea  class="form-control" name="product[detail]" id="editor">{{ product.detail }}</textarea>
+        </div>
+
+
+        <div class="row col-md-12">
+            <div class="col-md-6 form-group">
+                <a href="{{ path('admin_product_index') }}" class="btn btn-primary btn-block"><span
+                            class="glyphicon glyphicon-arrow-left"> </span> Back to List</a>
+            </div>
+            <div class="col-md-6 form-group">
+                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-check"></span>
+                    Save
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>

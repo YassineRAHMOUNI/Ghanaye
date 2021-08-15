@@ -1,0 +1,49 @@
+
+<form id="checkout-form" class="clearfix" name="order" action="{{ path('orders_new') }}" method="post">
+    <div class="col-md-6">
+        <div class="billing-details">
+
+            <div class="section-title" >
+                <h3 class="title">Fatura Detayları</h3>
+            </div>
+            <div class="form-group">
+                <label>Amount to be paid:</label>
+                <input class="input" type="text" name="orders[amount]" value="{{ total }}" placeholder="Total">
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="orders[name]" value="{{ app.user.name }}" placeholder="Name and surname">
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="orders[address]" value="{{ app.user.address }}" placeholder="Address">
+            </div>
+            <div class="form-group">
+                <input class="input" type="city" name="orders[city]" value="{{ app.user.city }}" placeholder="City">
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="orders[phone]" value="{{ app.user.phone }}" placeholder="Address">
+            </div>
+
+
+            <label>CREDIT CARD INFORMATION</label>
+            <div class="form-group">
+                <input class="input" type="text" name="cardholdername" placeholder="CREDIT CARD NAME SURNAME">
+            </div>
+            <div class="form-group">
+                <input class="input" type="number" name="cartnumber" placeholder="CARD NUMBER">
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="cart" placeholder="EXPIRATION DATE MM/YY">
+            </div>
+            <div class="form-group">
+                <input class="input" type="number" name="secure" placeholder="SECURITY CODE">
+            </div>
+
+            <input type="hidden" name="token" value="{{ csrf_token('form-order') }}"/>
+            <label class="col-sm-2 control-label">  </label>
+            <div class="control-group" class="col-sm-5">
+                <input class="shopping-cart-btns" type="submit" value="Buy"/>
+            </div>
+
+        </div>
+    </div>
+</form>

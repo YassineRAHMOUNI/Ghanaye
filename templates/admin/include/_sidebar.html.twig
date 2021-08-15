@@ -1,0 +1,40 @@
+<div id="sidebar-nav" class="sidebar">
+    <div class="sidebar-scroll">
+        <nav>
+            <ul class="nav">
+                <li><a href="{{ path('admin') }}"><i class="lnr lnr-home"></i> <span>Home page</span></a></li>
+                <li>
+                    <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-shopping-cart"></i> <span>Orders</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <div id="subPages" class="collapse ">
+                        <ul class="nav">
+                            <li><a href="{{ path('admin_orders_index' , {'slug' : 'new'}) }}" class="">New order</a></li>
+                            <li><a href="{{ path('admin_orders_index' , {'slug' : 'accepted'}) }}" class="">Confirmed Orders</a></li>
+                            <li><a href="{{ path('admin_orders_index' , {'slug' : 'inshipping'}) }}" class="">Canceled Orders</a></li>
+                            <li><a href="{{ path('admin_orders_index' , {'slug' : 'canceled'}) }}" class="">Orders in Cargo</a></li>
+                            <li><a href="{{ path('admin_orders_index' , {'slug' : 'complated'}) }} " class="">Completed Orders</a></li>
+                        </ul>
+                    </div>
+                </li>
+                 <li>
+                    <a href="#subRegion" data-toggle="collapse" class="collapsed"><i class="fa fa-shopping-cart"></i> <span>Region</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <div id="subRegion" class="collapse ">
+                        <ul class="nav">
+                            <li><a href="{{ path('admin_region_new') }}" class="">New region</a></li>
+                            <li><a href="{{ path('admin_region_index') }}" class="">Liste of region</a></li>
+                            
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ path('admin_product_index')}}" class=""><i class="glyphicon glyphicon-list-alt"></i> <span>Products</span></a></li>
+                <li><a href="{{ path('admin_categories_index')}}" class=""><i class="glyphicon glyphicon-th"></i> <span>Categories</span></a></li>
+                {#<li><a href="#" class=""><i class="glyphicon glyphicon-barcode"></i> <span>Species</span></a></li>#}
+                <li><a href="{{ path("admin/user") }}" class=""><i class="glyphicon glyphicon-user"></i> <span>Members</span></a></li>
+
+                <li><a href="{{ path('admin_messages_index')}}" class=""><i class="glyphicon glyphicon-envelope"></i> <span>Member Messages
+</span></a></li>
+                {#<li><a href="#" class=""><i class="glyphicon glyphicon-comment"></i> <span>Member Comments</span></a></li>#}
+                {#<li><a href="#" class=""><i class="glyphicon glyphicon-star"></i> <span>SSS</span></a></li>#}
+            </ul>
+        </nav>
+    </div>
+</div>
