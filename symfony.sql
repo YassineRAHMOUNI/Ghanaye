@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 15, 2021 at 09:45 PM
+-- Generation Time: Aug 17, 2021 at 06:05 PM
 -- Server version: 8.0.26-0ubuntu0.20.04.2
 -- PHP Version: 8.0.9
 
@@ -291,9 +291,29 @@ CREATE TABLE `region` (
 --
 
 INSERT INTO `region` (`id`, `name`) VALUES
-(5, 'fahed'),
 (6, 'test2'),
 (9, 'name');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `id` int NOT NULL,
+  `userId` int NOT NULL,
+  `productId` int NOT NULL,
+  `review` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `userId`, `productId`, `review`) VALUES
+(1, 3, 109, 3),
+(2, 3, 109, 5);
 
 -- --------------------------------------------------------
 
@@ -459,6 +479,12 @@ ALTER TABLE `region`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `setting`
 --
 ALTER TABLE `setting`
@@ -534,6 +560,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `region`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `setting`
